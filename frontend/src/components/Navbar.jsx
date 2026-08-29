@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import {assets} from "../assets/assets_frontend/assets"
+import { useAppContext } from '../context/AppContext'
+
 
 const Navbar = () => {
 
@@ -8,6 +9,7 @@ const Navbar = () => {
     const[showMenu, setShowMenu ] = useState(false)
     const [ token, setToken] = useState(true)
     const navigate = useNavigate()
+    const {assets} = useAppContext()
 
     const handleGetStarted = () => {
         navigate('/signin')
@@ -38,11 +40,11 @@ const Navbar = () => {
             className="w-10 h-10 rounded-full cursor-pointer"
         />
         <img className='w-2.5' src={assets.dropdown_icon} alt="" />
-        <div className="absolute top-12 right-0 shadow-lg rounded-lg pt-4 hidden group-hover:block">
-            <div className="flex flex-col gap-2 min-w-48 bg-stone-100 p-4 rounded">
-                <p>My Profile</p>
-                <p>My Appointments</p>
-                <p>Logout</p>
+        <div className="absolute top-0 right-0 text-base font-medium  text-gray-600 z-20 pt-12 hidden group-hover:block">
+            <div className="flex flex-col gap-4 min-w-48 bg-stone-100 p-4 rounded">
+                <p onClick={()=> navigate("my-profile")}className="hover:text-black cursor-pointer">My Profile</p>
+                <p onClick={()=> navigate("my-appointments")} className="hover:text-black cursor-pointer">My Appointments</p>
+                <p onClick={()=> setToken(false)} className="hover:text-black cursor-pointer">Logout</p>
             </div>
         </div>
       </div>
