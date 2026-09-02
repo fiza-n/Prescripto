@@ -1,29 +1,29 @@
 import React from 'react'
 import { assets } from '../assets/assets_frontend/assets'
-import { useAppContext } from '../context/AppContext'
+
+import { useNavigate } from 'react-router-dom'
 
 
 const Banner = () => {
 
-    const {navigate} = useAppContext()
+    const navigate = useNavigate()
 
   return (
-    <div className='bg-primary px-6 md:px-14 lg:px-20 rounded-lg'>
-        <div className='flex flex-col md:flex-row items-center gap-6'>
-            <div className='flex-1 py-8 md:py-12 lg:py-16'>
-                <div className='flex flex-col gap-4'>
-                    <p className='text-2xl md:text-3xl font-bold text-white'>Book Appointments </p>
-                    <p className='text-2xl md:text-3xl font-bold text-white'>With 100% Trusted Doctors</p>
-                    <div>
-                        <button onClick={() => navigate("/signup")} className='bg-white hover:bg-gray-100 text-blue-600 font-semibold px-6 py-2 rounded-lg transition-colors duration-300'>Create Account</button>
-                    </div>
-                </div>
+    <div className='flex flex-col gap-4 bg-primary px-6 sm:px-10 md:px-14 lg:px-12 my-20 md:mx-10 rounded-lg'>
+        <div className='flex-1 py-8 sm:py-10 md:py-16 lg:py-24 lg:pl-5'>
+            <div className='text-xlsm:text-2xl md:text-3xl lg:text-5xl font-semibold text-white'>
+             
+                    <p className=''>Book Appointments </p>
+                    <p className='mt-4'>With 100% Trusted Doctors</p>
+            
+                    <button onClick={() => {navigate("/signin"); scrollTo(0,0)}} className='bg-white sm:text-base text-sm text-gray-600 px-8 py-3 rounded-full mt-6 hover:scale-105 cursor-pointer transition-all' >Create Account</button>
+                    
             </div>
-            <div className='flex-1 hidden md:block'>
-                <img src={assets.appointment_img} alt="appointment" className='w-full h-auto rounded-lg' />
+    </div>
+            <div className='hidden md:block md:w-1/2 lg:w-[370px] relative'>
+                <img src={assets.appointment_img} alt="appointment" className='w-full absolute bottom-0 left-130 max-w-md' />
             </div>
         </div>
-    </div>
   )
 }
 

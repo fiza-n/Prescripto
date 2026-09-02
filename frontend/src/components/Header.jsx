@@ -16,7 +16,7 @@ const Header = () => {
                     <img src={assets.group_profiles} alt="Group profiles" />
                     <p>Simply browse through our extensive list of trusted doctor, schedule your appointments hassle-free.</p>
                 </div>
-                <a  className="header-appointment-btn" href="#specialty">
+                <a  className="header-appointment-btn" href="#speciality">
                     Book Appointment <img src={assets.arrow_icon} alt="arrow" />
                 </a>
             </div>

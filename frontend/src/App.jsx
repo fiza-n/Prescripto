@@ -11,6 +11,7 @@ import MyAppointments from './pages/user/MyAppointments';
 import MyProfile from './pages/user/MyProfile';
 import Appointment from './pages/doctor/Appointment';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 
 const App = () => {
@@ -19,7 +20,7 @@ const App = () => {
       <Navbar />
       <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/doctors/:specialty" element={<Doctors />} />
+      <Route path="/doctors/:speciality" element={<Doctors />} />
       <Route path="/contact" element={<Contacts />} />
       <Route path="/about" element={<About />} />
       <Route path="/my-appointments" element={<MyAppointments />} />
@@ -36,6 +37,7 @@ const App = () => {
         }
       />
     </Routes>
+    <Footer />
     </div>
   );
 }
